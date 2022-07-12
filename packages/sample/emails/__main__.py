@@ -1,5 +1,4 @@
 import os
-import sendgrid
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
 
@@ -26,7 +25,7 @@ def main(args):
         subject = user_subject,
         html_content = content)
     response = sg.send(message)
-    
+
     if response.status_code != 202:
         return {"body" : "email failed to send"}
     else:
