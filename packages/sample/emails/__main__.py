@@ -7,7 +7,7 @@ def main(args):
     user_from = args.get("from")
     user_to = args.get("to")
     user_subject = args.get("subject")
-    content = args.get("content")
+    content = args.get("content", "this message was sent from the sendgrid API")
 
     if not user_from:
         return {"body" : "no user email provided"}
@@ -28,3 +28,5 @@ def main(args):
     response = sg.send(message)
     if response.status_code != 202:
         return {"body" : "email failed to send"}
+    else:
+        return {"body" : "email sent"}
