@@ -37,7 +37,7 @@ Deployed functions ('doctl sls fn get <funcName> --url' for URL):
 ## Using the Function
 
 ```bash
-doctl serverless functions invoke presign/url -p from:user@do.com to:user@gmail.com subject:Sammy content:Good Morning from Sammy!
+doctl serverless functions invoke presign/url -p from:user@do.com to:user@gmail.com subject:Sammy content:Good Morning from Sammy.
 ```
 ```json
 {
