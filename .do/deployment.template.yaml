@@ -5,7 +5,7 @@ functions:
 - github:
     branch: main
     deploy_on_push: true
-    repo: digitalocean/sample-functions-python-emails
+    repo: digitalocean/sample-functions-python-sendgrid-email
   name: emails-api
   routes:
   - path: /
