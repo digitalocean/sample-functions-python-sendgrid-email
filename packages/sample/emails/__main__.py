@@ -38,4 +38,4 @@ def main(args):
 
     if response.status_code != 202:
         return {"body" : "email failed to send"}
-    return {"body" : "email sent"}
+    return {"body" : "success"}
