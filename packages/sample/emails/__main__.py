@@ -13,7 +13,7 @@ def translateCode(code):
             args: Contains the sendgrid error status code
 
         Returns:
-            json StatusCode: Json http error status code
+            json statusCode: Json http error status code
     '''
     match code:
         case "60000":
@@ -70,6 +70,8 @@ def translateCode(code):
             return HTTPStatus.FORBIDDEN
         case "60083":
             return HTTPStatus.FORBIDDEN
+        case _ :
+            return HTTPStatus.INTERNAL_SERVER_ERROR
 
 def main(args):
     '''
@@ -90,22 +92,22 @@ def main(args):
 
     if not user_from:
         return {
-            "StatusCode" : HTTPStatus.BAD_REQUEST,
+            "statusCode" : HTTPStatus.BAD_REQUEST,
             "body" : "no user email provided"
         }
     if not user_to:
         return {
-            "StatusCode" : HTTPStatus.BAD_REQUEST,
+            "statusCode" : HTTPStatus.BAD_REQUEST,
             "body" : "no receiver email provided"
         }
     if not user_subject:
         return {
-            "StatusCode" : HTTPStatus.BAD_REQUEST,
+            "statusCode" : HTTPStatus.BAD_REQUEST,
             "body" : "no subject provided"
         }
     if not content:
         return {
-            "StatusCode" : HTTPStatus.BAD_REQUEST,
+            "statusCode" : HTTPStatus.BAD_REQUEST,
             "body" : "no content provided"
         }
 
@@ -120,10 +122,10 @@ def main(args):
     if response.status_code != 202:
         code = translateCode(response.status_code)
         return {
-            "StatusCode" : code,
+            "statusCode" : code,
             "body" : "email failed to send"
         }
     return {
-        "StatusCode" : HTTPStatus.OK,
+        "statusCode" : HTTPStatus.ACCEPTED,
         "body" : "success"
     }
