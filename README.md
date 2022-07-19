@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This repository contains a sample Sendgrid Emails function written in Python. You are able to send an email using Sendgrid's API to email addresses with or without DMARCS. You can deploy it on DigitalOcean's App Platform as a Serverless Function component.
+This repository contains a sample Sendgrid Email function written in Python. You are able to send an email using Sendgrid's API to email addresses with or without DMARCS. You can deploy it on DigitalOcean's App Platform as a Serverless Function component.
 Documentation is available at https://docs.digitalocean.com/products/functions.
 
 ### Requirements
@@ -20,13 +20,13 @@ Documentation is available at https://docs.digitalocean.com/products/functions.
 
 ```bash
 # clone this repo
-git clone git@github.com:digitalocean/sample-functions-python-emails.git
+git clone git@github.com:digitalocean/sample-functions-python-sendgrid-email.git
 ```
 
 ```
 # deploy the project, using a remote build so that compiled executable matched runtime environment
-> doctl serverless deploy sample-functions-python-emails --remote-build
-Deploying 'sample-functions-python-emails'
+> doctl serverless deploy sample-functions-python-sendgrid-email --remote-build
+Deploying 'sample-functions-python-sendgrid-email'
   to namespace 'fn-...'
   on host 'https://faas-...'
 Submitted action 'emails' for remote building and deployment in runtime python:default (id: ...)
