@@ -1,7 +1,5 @@
 environment:
   API_KEY: ${API_KEY}
-dependencies:
-  sendgrid: ^6.4.6
 packages:
   - name: sample
     actions:
