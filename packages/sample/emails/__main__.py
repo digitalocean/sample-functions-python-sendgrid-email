@@ -18,7 +18,7 @@ def main(args):
     user_from = args.get("from")
     user_to = args.get("to")
     user_subject = args.get("subject")
-    content = args.get("content", "this message was sent from the sendgrid API")
+    content = args.get("content")
 
     if not user_from:
         return {
