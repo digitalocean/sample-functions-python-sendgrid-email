@@ -4,5 +4,4 @@ packages:
   - name: sample
     actions:
       - name: emails
-        package: sample
         runtime: 'python:default'
