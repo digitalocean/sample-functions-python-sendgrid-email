@@ -1,7 +1,5 @@
-environment:
-  API_KEY: ${API_KEY}
 packages:
-  - name: sample
+  - name: ap
     actions:
-      - name: emails
+      - name: opengraph
         runtime: 'python:default'
